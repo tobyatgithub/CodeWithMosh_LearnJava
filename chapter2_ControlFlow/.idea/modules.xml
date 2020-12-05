@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/If_statement.iml" filepath="$PROJECT_DIR$/If_statement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter2_ControlFlow.iml" filepath="$PROJECT_DIR$/chapter2_ControlFlow.iml" />
     </modules>
   </component>
 </project>
