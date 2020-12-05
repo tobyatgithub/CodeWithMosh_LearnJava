@@ -1,5 +1,7 @@
 package com.toby;
 
+import java.util.Scanner;
+
 public class control_flow {
     static void if_statment() {
         System.out.println("#4 if statment");
@@ -41,12 +43,85 @@ public class control_flow {
         System.out.println();
     }
 
+    static void SwitchStatement() {
+        System.out.println("#7 switch statment");
+        String role = "admin";
+
+        switch (role) {
+            case "admin":
+                System.out.println("You're an admin");
+                break;
+            case "moderator":
+                System.out.println("You're a moderator");
+                break;
+            default:
+                System.out.println("You're a guest");
+        }
+//        if (role == "admin")
+//            System.out.println("You're an admin");
+//        else if (role == "moderator")
+//            System.out.println("You're a moderator");
+//        else
+//            System.out.println("You're a guest");
+        System.out.println();
+    }
+
+    static void exercise_fizzbuzz(){
+        System.out.println("Exercise: fizzbuzz");
+        Scanner myScanner = new Scanner(System.in);
+        System.out.print("Enter number: ");
+
+        int Number = myScanner.nextInt();
+        if (Number%3==0 && Number%5==0)
+            System.out.println("FizzBuzz");
+        else if (Number%3==0)
+            System.out.println("Fizz");
+        else if (Number%5==0)
+            System.out.println("Buzz");
+        else
+            System.out.println(Number);
+        System.out.println();
+
+    }
+
+    static void for_loop() {
+        System.out.println("#9, for loop");
+        for (int i = 0; i < 5; i++){
+            System.out.println("Hello World " + i);
+        }
+
+    }
+
+    static void while_loop() {
+        String input = "";
+        // input != "quit" will not work as it will compare their physical address
+        Scanner scanner = new Scanner(System.in);
+        while (!input.toLowerCase().trim().equals("quit")){
+            System.out.print("Input: ");
+            input = scanner.next();
+            System.out.println("You typed in: " + input);
+        }
+    }
+
+
     public static void main(String[] args) {
         // 4.
-        if_statment();
+//        if_statment();
         // 5.
-        simplify_if();
+//        simplify_if();
         // 6.
-        TernaryOperator();
+//        TernaryOperator();
+        //7.
+//        SwitchStatement();
+        //8.
+//        exercise_fizzbuzz();
+        //9.
+//        for_loop();
+        // 10.
+        while_loop();
+        // comment: use for loop if you know how many times you want the code to run
+        //          use while loop if you don't know how many times your code will run.
     }
+
+
 }
