@@ -103,7 +103,32 @@ public class control_flow {
         }
     }
 
+    static void break_and_continue() {
+        String input = "";
+        // input != "quit" will not work as it will compare their physical address
+        Scanner scanner = new Scanner(System.in);
+//        while (!input.toLowerCase().trim().equals("quit")){
+        while (true) { // advantage of using break.
+            System.out.print("Input: ");
+            input = scanner.next();
+            if (input.toLowerCase().trim().equals("pass"))
+                continue; // skip the print if typed in pass but stay in the loop
+            if (input.toLowerCase().trim().equals("quit"))
+                break; //skip the print if quit
+            System.out.println("You typed in: " + input);
+        }
+    }
 
+    static void for_each_loop() {
+        String[] fruits= {"Apple", "Mango", "Orange"};
+
+//        for (int i = 0; i < fruits.length; i++)
+//            System.out.println(fruits[i]);
+
+        for (String fruit : fruits) //for-each
+            System.out.println(fruit);
+
+    }
     public static void main(String[] args) {
         // 4.
 //        if_statment();
@@ -118,9 +143,13 @@ public class control_flow {
         //9.
 //        for_loop();
         // 10.
-        while_loop();
+//        while_loop();
         // comment: use for loop if you know how many times you want the code to run
         //          use while loop if you don't know how many times your code will run.
+        // 11.
+//        break_and_continue();
+        // 12. limit1: forward only, can do i-- style; limit2: won't have access to index
+//        for_each_loop();
     }
 
 
