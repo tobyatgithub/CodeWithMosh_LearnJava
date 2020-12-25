@@ -2,6 +2,8 @@ package com.toby;
 
 import java.text.NumberFormat;
 import java.util.Scanner;
+// TODO: refactor and make each function 5-10 lines, no more than 20 lines.
+// hint: Refactor -> extract -> method
 
 public class refactorMortgageCalculator {
     public static void main(String[] args) {
@@ -27,7 +29,6 @@ public class refactorMortgageCalculator {
         }
         return value;
     }
-
 
     public static double calculatMortgage(
             int principal,
