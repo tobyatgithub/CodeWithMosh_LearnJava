@@ -15,5 +15,8 @@ public class Main {
         employee.setHourlyRate(20);
         int wage = employee.calculateWage(20);
         System.out.println(wage);
+
+        // Abstraction = reduce complexity by hiding unnecessary details
+        // i.e. hide implementation details and treat it as a black box.
     }
 }
