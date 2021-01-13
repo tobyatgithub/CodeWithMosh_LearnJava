@@ -1,10 +1,32 @@
 package com.toby;
 
 public class Employee {
-    public int baseSalary;
-    public int hourlyRate;
+    private int baseSalary;
+    private int hourlyRate;
 
     public int calculateWage(int extraHours){
         return baseSalary + (hourlyRate * extraHours);
+    }
+
+    // setter
+    public void setBaseSalary(int baseSalary){
+        if (baseSalary <= 0)
+            throw new IllegalArgumentException("Salary can not be 0 or less");
+        this.baseSalary = baseSalary;
+    }
+
+    public void setHourlyRate(int hourlyRate){
+        if (hourlyRate <= 0)
+            throw new IllegalArgumentException("Hourly rate can not be 0 or less");
+        this.hourlyRate = hourlyRate;
+    }
+
+    // getter
+    public int getBaseSalary(){
+        return baseSalary;
+    }
+
+    public int getHourlyRate(){
+        return hourlyRate;
     }
 }
