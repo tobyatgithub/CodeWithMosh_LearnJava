@@ -12,6 +12,8 @@ public class Main {
 
         var employee = new Employee(
                 50_000, 20);
+//        System.out.println(Employee.numberOfEmployees);
+        Employee.printNumberOfEmployees();
         int wage = employee.calculateWage(20);
         System.out.println(wage);
 

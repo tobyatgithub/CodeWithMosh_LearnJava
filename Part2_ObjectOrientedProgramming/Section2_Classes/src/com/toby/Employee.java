@@ -4,16 +4,27 @@ public class Employee {
     private int baseSalary;
     private int hourlyRate;
 
+    // static method (belong to class) vs. instance method (belong to object)
+    // We use static method when the field belong to the whole class, e.g.:
+    public static int numberOfEmployees;
+    // number of total employess doesn't belong to a single employee instance
+    // we call it by calling class_name.name_of_the_static_field (Employee.numberOfEmployees)
+
     // Constructor
     public Employee(int baseSalary, int hourlyRate){
         setBaseSalary(baseSalary);
         setHourlyRate(hourlyRate);
+        numberOfEmployees++;
     }
     // Constructor overload
     public Employee(int baseSalary){
         this(baseSalary, 0);
     }
 
+    // static function. Notice it can only see other static things.
+    public static void printNumberOfEmployees(){
+        System.out.println(numberOfEmployees);
+    }
 
     public int calculateWage(int extraHours){
         return baseSalary + (hourlyRate * extraHours);
