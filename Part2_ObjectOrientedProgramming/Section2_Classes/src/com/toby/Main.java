@@ -18,5 +18,7 @@ public class Main {
 
         // Abstraction = reduce complexity by hiding unnecessary details
         // i.e. hide implementation details and treat it as a black box.
+        var browser = new Browser();
+        browser.navigate("");
     }
 }
