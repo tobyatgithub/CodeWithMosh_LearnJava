@@ -10,9 +10,8 @@ public class Main {
         textBox1.setText("Box 1");
         System.out.println(textBox1.text);
 
-        var employee = new Employee();
-        employee.setBaseSalary(50_000);
-        employee.setHourlyRate(20);
+        var employee = new Employee(
+                50_000, 20);
         int wage = employee.calculateWage(20);
         System.out.println(wage);
 
