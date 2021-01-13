@@ -13,6 +13,13 @@ public class Employee {
         return baseSalary + (hourlyRate * extraHours);
     }
 
+    // example of function overload, where we can change
+    // the logic of a function based on input.
+    public int calculateWage(){
+        return baseSalary;
+        // or, return calculateWage(0);
+    }
+
     // setter
     public void setBaseSalary(int baseSalary){
         if (baseSalary <= 0)
