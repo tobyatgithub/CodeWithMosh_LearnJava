@@ -9,11 +9,16 @@ public class Employee {
         setBaseSalary(baseSalary);
         setHourlyRate(hourlyRate);
     }
+    // Constructor overload
+    public Employee(int baseSalary){
+        this(baseSalary, 0);
+    }
+
+
     public int calculateWage(int extraHours){
         return baseSalary + (hourlyRate * extraHours);
     }
-
-    // example of function overload, where we can change
+    // Function overload: where we can change
     // the logic of a function based on input.
     public int calculateWage(){
         return baseSalary;
@@ -28,7 +33,7 @@ public class Employee {
     }
 
     public void setHourlyRate(int hourlyRate){
-        if (hourlyRate <= 0)
+        if (hourlyRate < 0)
             throw new IllegalArgumentException("Hourly rate can not be 0 or less");
         this.hourlyRate = hourlyRate;
     }
