@@ -1,7 +1,5 @@
 package com.toby;
 
-import java.text.NumberFormat;
-
 public class refactorMortgageCalculator {
     final static byte MONTHS_IN_YEAR = 12;
     final static byte PERCENT = 100;
@@ -12,25 +10,8 @@ public class refactorMortgageCalculator {
         float annualInterestRate = (float) Console.readNumber("Annual Interest Rate: ", 0, 30);
         byte years = (byte) Console.readNumber("Period (years): ", 1, 30);
 
-        printMorgage(principal, annualInterestRate, years);
-        printPaymentSchedule(principal, annualInterestRate, years);
-    }
-
-    private static void printPaymentSchedule(int principal, float annualInterestRate, byte years) {
-        System.out.println();
-        System.out.println("PAYMENT SCHEDULE: " );
-        System.out.println("------------------");
-        for (int month = 0; month <= years * MONTHS_IN_YEAR; month ++){
-            double balance = calculatRemainingBalance(principal, annualInterestRate, years, month);
-            System.out.println(NumberFormat.getCurrencyInstance().format(balance));
-        }
-    }
-
-    private static void printMorgage(int principal, float annualInterestRate, byte years) {
-        double mortgage = calculatMortgage(principal, annualInterestRate, years);
-        String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
-        System.out.println("MONTHLY MORTGAGE: " + mortgageFormatted);
-        System.out.println("------------------");
+        MortgageReport.printMorgage(principal, annualInterestRate, years);
+        MortgageReport.printPaymentSchedule(principal, annualInterestRate, years);
     }
 
     public static double calculatMortgage(
