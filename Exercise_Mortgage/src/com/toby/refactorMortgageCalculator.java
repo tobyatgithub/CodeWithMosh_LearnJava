@@ -1,7 +1,6 @@
 package com.toby;
 
 import java.text.NumberFormat;
-import java.util.Scanner;
 
 public class refactorMortgageCalculator {
     final static byte MONTHS_IN_YEAR = 12;
@@ -9,9 +8,9 @@ public class refactorMortgageCalculator {
 
     public static void main(String[] args) {
         System.out.println("Welcome to your mortgage calculator. \nPlease type in the information...");
-        int principal = (int)readNumber("Principal: ", 1_000, 1_000_000);
-        float annualInterestRate = (float)readNumber("Annual Interest Rate: ", 0, 30);
-        byte years = (byte)readNumber("Period (years): ", 1, 30);
+        int principal = (int) Console.readNumber("Principal: ", 1_000, 1_000_000);
+        float annualInterestRate = (float) Console.readNumber("Annual Interest Rate: ", 0, 30);
+        byte years = (byte) Console.readNumber("Period (years): ", 1, 30);
 
         printMorgage(principal, annualInterestRate, years);
         printPaymentSchedule(principal, annualInterestRate, years);
@@ -32,19 +31,6 @@ public class refactorMortgageCalculator {
         String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
         System.out.println("MONTHLY MORTGAGE: " + mortgageFormatted);
         System.out.println("------------------");
-    }
-
-    public static double readNumber(String prompt, double min, double max){
-        Scanner scanner = new Scanner(System.in);
-        double value;
-        while(true){
-            System.out.print(prompt);
-            value = scanner.nextInt();
-            if (value >= min && value <= max)
-                break;
-            System.out.println("Enter a number between " + min + " and " + max);
-        }
-        return value;
     }
 
     public static double calculatMortgage(
