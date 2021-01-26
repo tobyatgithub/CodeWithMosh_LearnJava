@@ -10,34 +10,11 @@ public class refactorMortgageCalculator {
         float annualInterestRate = (float) Console.readNumber("Annual Interest Rate: ", 0, 30);
         byte years = (byte) Console.readNumber("Period (years): ", 1, 30);
 
-        MortgageReport.printMorgage(principal, annualInterestRate, years);
-        MortgageReport.printPaymentSchedule(principal, annualInterestRate, years);
+        var calculator = new MortgageCalculator(principal, annualInterestRate, years);
+        var report = new MortgageReport(calculator);
+        report.printMorgage();
+        report.printPaymentSchedule();
     }
 
-    public static double calculatMortgage(
-            int principal,
-            float annualInterestRate,
-            byte years){
-        short numberOfPayment = (short)(years * MONTHS_IN_YEAR);
-        float monthInterestRate = annualInterestRate / PERCENT / MONTHS_IN_YEAR;
-
-        double mortgage = principal
-                * (monthInterestRate * Math.pow(1+monthInterestRate, numberOfPayment))
-                / (Math.pow(1+monthInterestRate, numberOfPayment) - 1);
-        return mortgage;
-    }
-
-    public static double calculatRemainingBalance(
-            int principal,
-            float annualInterestRate,
-            byte years,
-            int numberOfPaymentMade) {
-        short numberOfPayment = (short)(years * MONTHS_IN_YEAR);
-        float monthInterestRate = annualInterestRate / PERCENT / MONTHS_IN_YEAR;
-        double remaningBalance = principal
-                * (Math.pow(1+monthInterestRate, numberOfPayment) - Math.pow(1+monthInterestRate, numberOfPaymentMade))
-                / (Math.pow(1+monthInterestRate, numberOfPayment) - 1);
-        return remaningBalance;
-    }
 }
 

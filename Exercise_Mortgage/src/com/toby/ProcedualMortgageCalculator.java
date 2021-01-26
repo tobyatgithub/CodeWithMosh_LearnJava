@@ -3,7 +3,7 @@ package com.toby;
 import java.text.NumberFormat;
 import java.util.Scanner;
 
-public class MortageCalculator {
+public class ProcedualMortgageCalculator {
     public static void main(String[] args) {
         // better than magic numbers
         final byte MONTHS_IN_YEAR = 12;
