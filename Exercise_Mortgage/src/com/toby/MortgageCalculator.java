@@ -34,6 +34,14 @@ public class MortgageCalculator {
     return mortgage;
   }
 
+  public double[] getRemainingBalances(){
+    var balances = new double[getNumberOfPayments()];
+    for (int month = 0; month <= balances.length; month++) {
+      balances[month - 1] = calculatRemainingBalance(month);
+    }
+    return balances;
+  }
+
   private short getNumberOfPayments() {
     return (short) (years * MONTHS_IN_YEAR);
   }
