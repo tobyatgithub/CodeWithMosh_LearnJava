@@ -1,13 +1,14 @@
 package com.toby;
 
 public class Employee {
+    // ?why private
     private int baseSalary;
     private int hourlyRate;
 
     // static method (belong to class) vs. instance method (belong to object)
     // We use static method when the field belong to the whole class, e.g.:
     public static int numberOfEmployees;
-    // number of total employess doesn't belong to a single employee instance
+    // number of total employees doesn't belong to a single employee instance
     // we call it by calling class_name.name_of_the_static_field (Employee.numberOfEmployees)
 
     // Constructor

@@ -21,5 +21,9 @@ public class Main {
         // i.e. hide implementation details and treat it as a black box.
         var browser = new Browser();
         browser.navigate("");
+
+        double T = 24;
+        double S = 22;
+        System.out.println("T = " + T + "S = " + S);
     }
 }
