@@ -5,6 +5,14 @@ import org.w3c.dom.Text;
 public class Main {
 
   public static void main(String[] args) {
+    // 09 polymorphism
+    UIControl[] controls = {new TextBox(), new CheckBox()};
+    for (var control: controls){
+      control.render();
+    }
+
+
+    // 08
     var point1 = new Point(1,2);
     var point2 = new Point(1,2);
     System.out.println(point1.equals(point2));
@@ -16,10 +24,10 @@ public class Main {
 //    System.out.println(textbox.toString());
 //    System.out.println(textbox);
 
-    var control = new UIControl(true);
-    show(control); // downcasting: UIControl -> TextBox
+//    var control = new UIControl(true);
+//    show(control); // downcasting: UIControl -> TextBox
 
-    show(textbox); // upcasting: TextBox -> UIControl
+//    show(textbox); // upcasting: TextBox -> UIControl
   }
 
   public static void show(UIControl control){
